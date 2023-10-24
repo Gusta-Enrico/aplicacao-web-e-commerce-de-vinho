@@ -1,5 +1,8 @@
 package br.com.winewave.servlet;
 
+        import br.com.winewave.dao.VinhoDao;
+        import br.com.winewave.model.Vinho;
+
         import javax.servlet.ServletException;
         import javax.servlet.annotation.WebServlet;
         import javax.servlet.http.HttpServlet;
@@ -14,10 +17,16 @@ public class CreateWineServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String wineName = req.getParameter("Vinho: ");
+        double winePreco = Double.parseDouble(req.getParameter(String.valueOf(100.00)));
+        String wineDesc = req.getParameter("Descrição: ");
+
+        Vinho vinho = new Vinho(wineName,winePreco,wineDesc);
+
+        new VinhoDao().createVinho(vinho);
 
         System.out.println(wineName);
 
-        req.getRequestDispatcher("index.html").forward(req, resp);
+        resp.sendRedirect("/find-all-vinhos");
 
     }
 }

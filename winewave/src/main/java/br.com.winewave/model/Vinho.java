@@ -7,12 +7,16 @@ public class Vinho {
     private double preco;
     private String descricao;
 
-    public String getNome() {
-        return Nome;
+    public Vinho(String Nome, double preco, String descricao) {
+        this.Nome = Nome;
+        this.preco = preco;
+        this.descricao = descricao;
     }
 
-    public void setNome(String nome) {
-        Nome = nome;
+
+
+    public String getNome() {
+        return Nome;
     }
 
     public int getId_vinho() {
@@ -23,19 +27,13 @@ public class Vinho {
         this.id_vinho = id_vinho;
     }
 
+
     public double getPreco() {
         return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
     }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
 }
