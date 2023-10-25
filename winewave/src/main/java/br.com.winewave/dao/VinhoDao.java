@@ -16,20 +16,22 @@ public class VinhoDao {
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
 
             System.out.println("success in database connection");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
+            preparedStatement.setString(1, String.valueOf(vinho.getPreco()));
             preparedStatement.setString(1, vinho.getNome());
+            preparedStatement.setString(1, vinho.getDescricao());
             preparedStatement.execute();
 
             System.out.println("success in insert vinho");
 
             connection.close();
 
-        } catch (Exception e){
+        } catch (Exception e) {
 
             System.out.println("fail in database connection");
 
@@ -54,11 +56,12 @@ public class VinhoDao {
 
             while (resultSet.next()) {
 
+                String wineId = resultSet.getString("id");
                 String wineName = resultSet.getString("Vinho: ");
                 double winePreco = Double.parseDouble(resultSet.getString(String.valueOf(100.00)));
                 String wineDesc = resultSet.getString("Descrição: ");
 
-                Vinho vinho = new Vinho(wineName, winePreco, wineDesc);
+                Vinho vinho = new Vinho(wineId,wineName);
 
                 vinhos.add(vinho);
 
@@ -76,6 +79,29 @@ public class VinhoDao {
 
             return Collections.emptyList();
 
+        }
+    }
+
+    public void deleteVinhoById(String vinhoId) {
+
+        String SQL = "DELETE VINHO WHERE ID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, vinhoId);
+            preparedStatement.execute();
+
+            System.out.println("success on delete car with id: " + vinhoId);
+
+            connection.close();
+
+        }catch (Exception e){
+            System.out.println("Falha na conexão do banco de dados!");
         }
 
     }

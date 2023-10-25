@@ -3,7 +3,7 @@ package br.com.winewave.model;
 public class Vinho {
 
     private String Nome;
-    private int id_vinho;
+    private String id_vinho;
     private double preco;
     private String descricao;
 
@@ -14,22 +14,26 @@ public class Vinho {
     }
 
 
+    public Vinho(String nome, String id_vinho) {
+        Nome = nome;
+        this.id_vinho = id_vinho;
+    }
 
     public String getNome() {
         return Nome;
     }
 
-    public int getId_vinho() {
-        return id_vinho;
-    }
+    public String getId_vinho() {
 
-    public void setId_vinho(int id_vinho) {
-        this.id_vinho = id_vinho;
+        return id_vinho;
     }
 
 
     public double getPreco() {
         return preco;
+    }
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     public String getDescricao() {

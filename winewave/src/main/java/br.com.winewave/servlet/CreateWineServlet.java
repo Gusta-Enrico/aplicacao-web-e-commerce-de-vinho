@@ -20,6 +20,7 @@ public class CreateWineServlet extends HttpServlet {
         double winePreco = Double.parseDouble(req.getParameter(String.valueOf(100.00)));
         String wineDesc = req.getParameter("Descrição: ");
 
+
         Vinho vinho = new Vinho(wineName,winePreco,wineDesc);
 
         new VinhoDao().createVinho(vinho);
@@ -27,6 +28,7 @@ public class CreateWineServlet extends HttpServlet {
         System.out.println(wineName);
 
         resp.sendRedirect("/find-all-vinhos");
+
 
     }
 }
