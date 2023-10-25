@@ -1,6 +1,7 @@
 package br.com.winewave.dao;
 
 import br.com.winewave.model.Vinho;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -61,7 +62,7 @@ public class VinhoDao {
                 double winePreco = Double.parseDouble(resultSet.getString(String.valueOf(100.00)));
                 String wineDesc = resultSet.getString("Descrição: ");
 
-                Vinho vinho = new Vinho(wineId,wineName);
+                Vinho vinho = new Vinho(wineId, wineName);
 
                 vinhos.add(vinho);
 
@@ -100,10 +101,39 @@ public class VinhoDao {
 
             connection.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Falha na conexão do banco de dados!");
         }
 
     }
 
+    public void updateVinho(Vinho vinho) {
+        String SQL = "UPDATE VINHO SET NOME_VINHO = ?,PRECO_VINHO = ? ,DESCRICAO = ? WHERE ID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, vinho.getNome());
+            preparedStatement.setString(2, vinho.getId_vinho());
+            preparedStatement.setString(3, vinho.getDescricao());
+            preparedStatement.execute();
+
+            System.out.println("success in update wine");
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("fail in database connection");
+            System.out.println("Error: " + e.getMessage());
+        }
+
+    }
 }
+
+
