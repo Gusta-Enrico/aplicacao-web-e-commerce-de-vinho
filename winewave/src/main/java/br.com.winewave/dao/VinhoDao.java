@@ -24,8 +24,8 @@ public class VinhoDao {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, String.valueOf(vinho.getPreco()));
-            preparedStatement.setString(1, vinho.getNome());
-            preparedStatement.setString(1, vinho.getDescricao());
+            preparedStatement.setString(2, vinho.getNome());
+            preparedStatement.setString(3, vinho.getDescricao());
             preparedStatement.execute();
 
             System.out.println("success in insert vinho");
@@ -59,7 +59,7 @@ public class VinhoDao {
 
                 String wineId = resultSet.getString("id");
                 String wineName = resultSet.getString("Vinho: ");
-                double winePreco = Double.parseDouble(resultSet.getString(String.valueOf(100.00)));
+                double winePreco = Double.parseDouble(resultSet.getString(String.valueOf("Preço: ")));
                 String wineDesc = resultSet.getString("Descrição: ");
 
                 Vinho vinho = new Vinho(wineId, wineName);

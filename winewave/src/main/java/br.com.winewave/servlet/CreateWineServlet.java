@@ -16,9 +16,14 @@ public class CreateWineServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String wineName = req.getParameter("Vinho: ");
-        double winePreco = Double.parseDouble(req.getParameter(String.valueOf(100.00)));
-        String wineDesc = req.getParameter("Descrição: ");
+        String wineName = null;
+        double winePreco = 0.0;
+        String wineDesc = null;
+
+
+        wineName = req.getParameter("Vinho: ");
+        winePreco = Double.parseDouble(req.getParameter(String.valueOf("Preço: ")));
+        wineDesc = req.getParameter("Descrição: ");
 
 
         Vinho vinho = new Vinho(wineName,winePreco,wineDesc);
