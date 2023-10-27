@@ -15,8 +15,8 @@ public class DeleteVinhoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-       String vinhiId =  req.getParameter("id");
-       new VinhoDao().deleteVinhoById(vinhiId);
+       String idVinho =  req.getParameter("idVinho");
+       new VinhoDao().deleteVinhoById(idVinho);
        resp.sendRedirect("/find-all-vinhos");
 
     }

@@ -13,7 +13,7 @@ import java.util.List;
 public class VinhoDao {
 
     public void createVinho(Vinho vinho) {
-        String SQL = "INSERT INTO VINHO  (PRECO_VINHO, NOME_VINHO, DESCRICAO_VINHO) VALUES (?,?,?)";
+        String SQL = "INSERT INTO VINHO  (PRECO_VINHO, NOME_VINHO, DESCRICAO) VALUES (?,?,?)";
 
         try {
 
@@ -57,12 +57,12 @@ public class VinhoDao {
 
             while (resultSet.next()) {
 
-                String wineId = resultSet.getString("id");
-                String wineName = resultSet.getString("Vinho: ");
-                double winePreco = Double.parseDouble(resultSet.getString(String.valueOf("Preço: ")));
-                String wineDesc = resultSet.getString("Descrição: ");
+                String idVinho = resultSet.getString("ID_VINHO");
+                double preco = Double.parseDouble(resultSet.getString(String.valueOf("PRECO_VINHO")));
+                String nome = resultSet.getString("NOME_VINHO");
+                String descricao = resultSet.getString("DESCRICAO");
 
-                Vinho vinho = new Vinho(wineId, wineName);
+                Vinho vinho = new Vinho(nome, idVinho,preco, descricao);
 
                 vinhos.add(vinho);
 
@@ -83,9 +83,9 @@ public class VinhoDao {
         }
     }
 
-    public void deleteVinhoById(String vinhoId) {
+    public void deleteVinhoById(String idVinho) {
 
-        String SQL = "DELETE VINHO WHERE ID = ?";
+        String SQL = "DELETE VINHO WHERE ID_VINHO = ?";
 
         try {
 
@@ -94,21 +94,21 @@ public class VinhoDao {
             System.out.println("success in database connection");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setString(1, vinhoId);
+            preparedStatement.setString(1, idVinho);
             preparedStatement.execute();
 
-            System.out.println("success on delete car with id: " + vinhoId);
+            System.out.println("success on delete wine with id: " + idVinho);
 
             connection.close();
 
         } catch (Exception e) {
-            System.out.println("Falha na conexão do banco de dados!");
+            System.out.println("fail in database connection");
         }
 
     }
 
     public void updateVinho(Vinho vinho) {
-        String SQL = "UPDATE VINHO SET NOME_VINHO = ?,PRECO_VINHO = ? ,DESCRICAO = ? WHERE ID = ?";
+        String SQL = "UPDATE VINHO SET ,PRECO_VINHO = ?, NOME_VINHO = ?, ,DESCRICAO = ? WHERE ID_VINHO = ?";
 
         try {
 
@@ -119,8 +119,9 @@ public class VinhoDao {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, vinho.getNome());
-            preparedStatement.setString(2, vinho.getId_vinho());
-            preparedStatement.setString(3, vinho.getDescricao());
+            preparedStatement.setString(2, String.valueOf(vinho.getPreco()));
+            preparedStatement.setString(3, vinho.getIdVinho());
+            preparedStatement.setString(4, vinho.getDescricao());
             preparedStatement.execute();
 
             System.out.println("success in update wine");
