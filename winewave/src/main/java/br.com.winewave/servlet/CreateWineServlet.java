@@ -1,14 +1,14 @@
 package br.com.winewave.servlet;
 
-        import br.com.winewave.dao.VinhoDao;
-        import br.com.winewave.model.Vinho;
+import br.com.winewave.dao.VinhoDao;
+import br.com.winewave.model.Vinho;
 
-        import javax.servlet.ServletException;
-        import javax.servlet.annotation.WebServlet;
-        import javax.servlet.http.HttpServlet;
-        import javax.servlet.http.HttpServletRequest;
-        import javax.servlet.http.HttpServletResponse;
-        import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @WebServlet("/create-wine")
 public class CreateWineServlet extends HttpServlet {
@@ -16,22 +16,29 @@ public class CreateWineServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String nome = null;
-        String idVinho = null;
-        double preco = 0.0;
-        String descricao = null;
+
+        String idVinho = req.getParameter("wine-id");
+        String nome = req.getParameter("wine-name");
+        double preco = Double.parseDouble(req.getParameter("wine-preco"));
+        String descricao = req.getParameter("wine-desc");
 
 
-        nome = req.getParameter("wine-name");
-        preco = Double.parseDouble(req.getParameter("wine-preco"));
-        descricao = req.getParameter("wine-desc");
+        Vinho vinho = new Vinho(nome, idVinho, preco, descricao);
+        VinhoDao vinhoDAO = new VinhoDao();
 
 
-        Vinho vinho = new Vinho(nome,idVinho,preco,descricao);
+        //new VinhoDao().createVinho(vinho);
 
-        new VinhoDao().createVinho(vinho);
+        //Danillo - Trecho a ser corrigido (Debug)
 
-        System.out.println(nome);
+        if (idVinho.isBlank()) {
+            vinhoDAO.createVinho(vinho);
+            System.out.println(nome);
+
+        } else {
+            vinhoDAO.updateVinho(vinho);
+        }
+
 
         resp.sendRedirect("/find-all-vinhos");
 

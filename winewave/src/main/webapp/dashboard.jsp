@@ -18,7 +18,6 @@
             <th>Preço</th>
             <th>Descrição</th>
             <th>Actions</th>
-            <th>Actions</th>
         </tr>
         <c:forEach var="vinho" items="${vinhos}">
             <tr>
@@ -30,12 +29,9 @@
                     <form action="/delete-vinho" method="post">
                         <input type="hidden" id="idVinho" name="idVinho" value="${vinho.idVinho}">
                         <button type="submit">Delete</button>
-                    </form>
-                </td>
-                <td>
-                    <form action="/update-vinho" method="post">
-                    <input type="hidden" id="idVinho" name="idVinho" value="${vinho.idVinho}">
-                    <button type="submit">Update</button>
+                        <span> | </span>
+                        <a href="index.jsp?id=${vinho.idVinho}&nome=${vinho.nome}preco=${vinho.preco}descricao={vinho.descricao}">Update</a>
+
                     </form>
                 </td>
             </tr>

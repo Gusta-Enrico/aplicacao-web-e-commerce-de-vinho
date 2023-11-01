@@ -12,6 +12,10 @@ import java.util.List;
 
 public class VinhoDao {
 
+    /**
+     *Método responsavel por cadastrar os vinhos.
+     * * @param vinho
+     */
     public void createVinho(Vinho vinho) {
         String SQL = "INSERT INTO VINHO  (PRECO_VINHO, NOME_VINHO, DESCRICAO) VALUES (?,?,?)";
 
@@ -39,6 +43,10 @@ public class VinhoDao {
         }
     }
 
+    /**
+     * Método que lista os vinhos cadastrados.
+     * @return
+     */
     public List<Vinho> findAllVinhos() {
 
         String SQL = "SELECT * FROM VINHO";
@@ -83,6 +91,11 @@ public class VinhoDao {
         }
     }
 
+
+    /**
+     * Método para excluir os vinhos.
+     * @param idVinho
+     */
     public void deleteVinhoById(String idVinho) {
 
         String SQL = "DELETE VINHO WHERE ID_VINHO = ?";
@@ -106,9 +119,12 @@ public class VinhoDao {
         }
 
     }
-
+    /**
+     * Método edição de vinhos cadastrados.
+     * @param vinho
+     */
     public void updateVinho(Vinho vinho) {
-        String SQL = "UPDATE VINHO SET ,PRECO_VINHO = ?, NOME_VINHO = ?, ,DESCRICAO = ? WHERE ID_VINHO = ?";
+        String SQL = "UPDATE VINHO SET PRECO_VINHO = ?, NOME_VINHO = ?,DESCRICAO = ? WHERE ID_VINHO = ?";
 
         try {
 
