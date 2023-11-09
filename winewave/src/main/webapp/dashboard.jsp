@@ -30,7 +30,7 @@
                         <input type="hidden" id="idVinho" name="idVinho" value="${vinho.idVinho}">
                         <button type="submit">Delete</button>
                         <span> | </span>
-                        <a href="index.jsp?id=${vinho.idVinho}&nome=${vinho.nome}preco=${vinho.preco}descricao={vinho.descricao}">Update</a>
+                        <button><a href="index.jsp?id=${vinho.idVinho}&nome=${vinho.nome}preco=${vinho.preco}descricao={vinho.descricao}">Update</a></button>
 
                     </form>
                 </td>

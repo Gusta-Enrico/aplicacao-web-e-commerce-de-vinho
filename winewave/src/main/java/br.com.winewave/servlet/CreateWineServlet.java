@@ -27,9 +27,6 @@ public class CreateWineServlet extends HttpServlet {
         VinhoDao vinhoDAO = new VinhoDao();
 
 
-        //new VinhoDao().createVinho(vinho);
-
-        //Danillo - Trecho a ser corrigido (Debug)
 
         if (idVinho.isBlank()) {
             vinhoDAO.createVinho(vinho);
