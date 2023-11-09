@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
         boolean usuarioValido = new UsuarioDao().verificarCredenciais(usr);
 
         if (usuarioValido){
-            req.getSession().setAttribute("UsuarioLogado:", usuario);
+            req.getSession().setAttribute("usuarioLogado:", usuario);
 
             resp.sendRedirect("/find-all-vinhos");
         }

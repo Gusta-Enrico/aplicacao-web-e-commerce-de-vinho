@@ -10,6 +10,12 @@
 </head>
 <body>
   <div>
+
+    <c:if test="${sessionScope.usuarioLogado != null}">
+            <span>${sessionScope.loggedUser}</span>
+            <a href="/logout">Logout</a>
+    </c:if>
+
     <h1>vinhos</h1>
     <table>
         <tr>
@@ -17,7 +23,11 @@
             <th>Name</th>
             <th>Preço</th>
             <th>Descrição</th>
+
+            <c:if test="${sessionScope.usuarioLogado != null}">
             <th>Actions</th>
+            </c:if>
+
         </tr>
         <c:forEach var="vinho" items="${vinhos}">
             <tr>
@@ -25,15 +35,20 @@
                 <td>${vinho.nome}</td>
                 <td>${vinho.preco}</td>
                 <td>${vinho.descricao}</td>
-                <td>
+
+                <c:if test="${sessionScope.usuarioLogado != null}">
+
+                    <td>
                     <form action="/delete-vinho" method="post">
                         <input type="hidden" id="idVinho" name="idVinho" value="${vinho.idVinho}">
                         <button type="submit">Delete</button>
                         <span> | </span>
                         <button><a href="index.jsp?id=${vinho.idVinho}&nome=${vinho.nome}preco=${vinho.preco}descricao={vinho.descricao}">Update</a></button>
-
                     </form>
-                </td>
+                    </td>
+
+                  </c:if>
+
             </tr>
          </c:forEach>
     </table>

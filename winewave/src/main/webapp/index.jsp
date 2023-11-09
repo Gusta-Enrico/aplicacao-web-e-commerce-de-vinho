@@ -1,4 +1,4 @@
-<html>
+    <html>
 <body>
 <h2>CRIAR VINHO</h2>
 
@@ -23,6 +23,5 @@
     <button type="submit">ENVIAR</button>
 
 </form>
-
 </body>
 </html>
