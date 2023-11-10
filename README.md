@@ -8,11 +8,19 @@ Aplicação WEB - Front, back e banco;
 
 **Aplicação WEB** será um **e-commerce de rotulos de vinho**, onde será possivel ter acesso a informações sobre o tipo de uva e o tipo de fermentação de cada rotulo.
 
+![Protótipos figma] 
+(/documentacao/Prototipos-High-Fidelity/confirmaçãoIdade.png)
+(/documentacao/Prototipos-High-Fidelity/login.png)
+(/documentacao/Prototipos-High-Fidelity/catalogo.png)
+(/documentacao/Prototipos-High-Fidelity/catalogoDeBusca.png)
+(/documentacao/Prototipos-High-Fidelity/menuVertical.png)
+(/documentacao/Prototipos-High-Fidelity/guiaEstilos.jpg)
 
 Modelo Entidade-Relacionamento (MER) - E-commerce de Vinhos
 Estrutura do MER
 O MER foi projetado para abranger as principais entidades e relacionamentos do sistema. Aqui está uma visão geral das entidades e seus atributos principais:
 
+![Modelo de entidade e relacionamento] (/documentacao/Modelo-er/Diagrama_ER_EcommerceVinhos.jpg)
 Entidades Principais
 Cliente
 
