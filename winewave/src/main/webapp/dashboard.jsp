@@ -41,7 +41,7 @@
                     <td>
                     <form action="/delete-vinho" method="post">
                         <input type="hidden" id="idVinho" name="idVinho" value="${vinho.idVinho}">
-                        <button type="submit">Delete</button>
+                        <button type="submit" class="btn btn-primary">Delete</button>
                         <span> | </span>
                         <button><a href="index.jsp?id=${vinho.idVinho}&nome=${vinho.nome}preco=${vinho.preco}descricao={vinho.descricao}">Update</a></button>
                     </form>
