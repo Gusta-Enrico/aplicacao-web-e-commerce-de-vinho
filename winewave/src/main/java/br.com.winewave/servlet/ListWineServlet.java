@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 
-@WebServlet({"/find-all-vinhos","/admin/find-all-vinhos"})
+@WebServlet({"/home","/admin/find-all-vinhos"})
 public class ListWineServlet extends HttpServlet {
 
     @Override
@@ -20,7 +20,11 @@ public class ListWineServlet extends HttpServlet {
         List<Vinho> vinhos = new VinhoDao().findAllVinhos();
 
         req.setAttribute("vinhos", vinhos);
+        if(req.getSession().getAttribute("loggedUser") != null) {
+            req.getRequestDispatcher("/admin/dashboard.jsp").forward(req, resp);
 
-        req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
+        }else
+            req.getRequestDispatcher("/home.jsp").forward(req, resp);
+
     }
 }

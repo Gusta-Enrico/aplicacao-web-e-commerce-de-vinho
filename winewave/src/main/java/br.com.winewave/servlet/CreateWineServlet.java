@@ -37,7 +37,7 @@ public class CreateWineServlet extends HttpServlet {
         }
 
 
-        resp.sendRedirect("/find-all-vinhos");
+        resp.sendRedirect("/admin/find-all-vinhos");
 
 
     }
