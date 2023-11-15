@@ -1,0 +1,33 @@
+    body {
+            background-color: #840437;
+            font-family: Arial, sans-serif;
+        }
+        .menu {
+            background-color: white;
+            width: 200px;
+            border-radius: 10px;
+            padding: 20px;
+            margin: auto;
+        }
+        .header {
+            background-color: #840437;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .option {
+            margin: 10px 0;
+            color: #840437;
+        }
+
+      button{
+        background-color: #840437;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px 0;
+        width: 100%;
+        border: none;
+        
+      }
