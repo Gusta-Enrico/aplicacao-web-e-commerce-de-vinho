@@ -37,3 +37,19 @@ button {
   cursor: pointer;
   width: 100%;
 }
+
+.logo {
+  text-align: center;
+
+}
+
+.pp {
+  padding: 70px 10px;
+  text-align: center;
+}
+
+.pd {
+  padding: 20px 10px;
+  border: 1px solid #ffff;
+  text-align: center;
+}
