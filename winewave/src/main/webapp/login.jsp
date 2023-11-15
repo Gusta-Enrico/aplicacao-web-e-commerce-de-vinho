@@ -14,12 +14,12 @@
     <br>
 
     <label for="nomedeUsuario">Nome de Usuario</label>
-    <input type="text" id="username" name="username">
+    <input type="text" id="usuario" name="usuario">
 
     <br>
 
     <label for="senha">Senha</label>
-    <input type="password" id="password" name="password">
+    <input type="password" id="senha" name="senha">
 
     <button type="submit">Login</button>
 
