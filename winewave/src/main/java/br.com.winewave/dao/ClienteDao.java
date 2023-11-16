@@ -38,19 +38,21 @@ public class ClienteDao {
     public Cliente buscarClientePorEmail(String email) {
         String sql = "SELECT * FROM CLIENTE WHERE EMAIL = ?";
 
-        try (Connection connection = ConnectionPoolConfig.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try {
+            Connection connection = ConnectionPoolConfig.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setString(1, email);
 
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+           try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
-                    Cliente cliente = new Cliente();
-                    cliente.setIdCliente(String.valueOf(resultSet.getInt("ID_CLIENTE")));
-                    cliente.setNome(resultSet.getString("NOME_CLI"));
-                    cliente.setEmail(resultSet.getString("EMAIL"));
-                    cliente.setSenha(resultSet.getString("SENHA"));
 
+                    String idcliente = resultSet.getString("ID_CLIENTE");
+                    String nome = resultSet.getString("NOME_CLI");
+                    String email_cli = resultSet.getString("EMAIL");
+                    String senha = resultSet.getString("SENHA");
+
+                    Cliente cliente = new Cliente(idcliente, nome, email_cli, senha);
                     return cliente;
                 }
             }

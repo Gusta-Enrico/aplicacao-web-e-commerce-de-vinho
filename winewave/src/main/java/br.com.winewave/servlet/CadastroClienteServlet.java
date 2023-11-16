@@ -22,7 +22,7 @@ public class CadastroClienteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String idcliente = req.getParameter("icliente");
+        String idcliente = req.getParameter("idcliente");
         String nome = req.getParameter("nome");
         String email = req.getParameter("email");
         String senha = req.getParameter("senha");

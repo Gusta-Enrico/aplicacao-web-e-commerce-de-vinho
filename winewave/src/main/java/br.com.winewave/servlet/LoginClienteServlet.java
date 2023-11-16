@@ -30,7 +30,7 @@ public class LoginClienteServlet extends HttpServlet {
 
         if (cliente != null && cliente.getSenha().equals(senha)) {
             req.getSession().setAttribute("loggedCli", cliente);
-            resp.sendRedirect("/find-all-vinhos");
+            resp.sendRedirect("/home");
         } else {
             req.setAttribute("message", "Invalid credentials!");
             req.getRequestDispatcher("/loginCliente.jsp").forward(req, resp);
