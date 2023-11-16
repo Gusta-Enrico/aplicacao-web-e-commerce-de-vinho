@@ -25,7 +25,7 @@
 </header>
 <div>
     <div class="container-fluid">
-        <c:if test="${sessionScope.usuarioLogado != null}">
+        <c:if test="${sessionScope.loggedUser != null}">
             <span>${sessionScope.loggedUser}</span>
             <a href="/logout">Logout</a>
         </c:if>
@@ -36,7 +36,7 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#"><span data-feather="user" class="align-text-bottom"></span>
-                                <c:if test="${sessionScope.usuarioLogado != null}">
+                                <c:if test="${sessionScope.loggedUser != null}">
                                     <th>Actions</th>
                                 </c:if>
                             </a>
@@ -75,7 +75,7 @@
                                 <td>${vinho.preco}</td>
                                 <td>${vinho.descricao}</td>
 
-                                <c:if test="${sessionScope.usuarioLogado != null}">
+                                <c:if test="${sessionScope.loggedUser != null}">
 
                                     <td>
                                         <form action="/delete-vinho" method="post">
