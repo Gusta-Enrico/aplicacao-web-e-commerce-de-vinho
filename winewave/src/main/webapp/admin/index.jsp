@@ -74,6 +74,10 @@
     <input type="text" name="wine-desc" id="wine-desc" value="${vinho.descricao}">
     <br><br>
 
+    <label>Image</label>
+    <input type="file" name = "wine-image" id="wine-image" value="${vinho.image}">
+    <br><br>
+
     <button type="submit">ENVIAR</button>
 
 </form>
