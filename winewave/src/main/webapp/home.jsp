@@ -173,6 +173,7 @@
 				<h5>Os melhores vinhos argentinos estao aqui!</h5>
 				<p>Venha conferir!</p>
 			</div>
+
 		</div>
 		<div class="carousel-item">
 			<img src="https://s3-alpha-sig.figma.com/img/f57e/d2a3/3fcc3652a021405f7b760da61f36da77?Expires=1701043200&Signature=AyGpQiaFA-QQCHdmvDVb0fGmobFoWn7mKQqouayo~dvr4nB~SqTIzSHnMjoTHY7rc66xRLfLdfTom-RNcm3KD8DB9ze8WIBaBTbEUfL-FC3FuRpWwIcDD5~pa7Sfpjn8B5KOW-V2fLrc~k7Qn24cpLesqkfoShSsYC9tHW8HG~uZMa5-2ZA8XhvoMv4eqZzKHNfNlvaiB9po33vaABKkvmGQcb3FkAiXVv5p9XMheQTY1jDoQLyrOQt4yJQn6cMnjs2JYtdIibCTqSq5idRB1zz1TXWi1QoTEaX35tgOUxcXkW5FWbPiTnrVuNkOekC-fXSCa4vEdteeKO8PwwAr8g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" class="d-block w-100" alt="...">
