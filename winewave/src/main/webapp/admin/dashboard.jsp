@@ -2,6 +2,30 @@
 <html>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<style>
+    /* Add your custom styles here */
+    .custom-header {
+        background: linear-gradient(to right, #380117, #380117);
+        padding: 0px;
+        color: white;
+    }
+
+    .navbar {
+        background: linear-gradient(to right, #380117, #5e0126, #380117);
+        padding: 10px;
+        color: white;
+    }
+
+    .sidebar .nav-link {
+        font-weight: 500;
+        color: #380117;
+    }
+
+    .sidebar .nav-link.active {
+        color: #380117;
+    }
+</style>
 <head>
     <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html" charset=UTF-8>
