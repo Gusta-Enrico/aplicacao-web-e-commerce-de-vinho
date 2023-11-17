@@ -24,7 +24,7 @@ public class ListWineServlet extends HttpServlet {
             req.getRequestDispatcher("/admin/dashboard.jsp").forward(req, resp);
 
         }else
-            req.getRequestDispatcher("/home.jsp").forward(req, resp);
+            req.getRequestDispatcher("/admin/dashboard.jsp").forward(req, resp);
 
     }
 }

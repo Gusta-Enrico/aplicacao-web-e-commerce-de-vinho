@@ -5,7 +5,7 @@
 <head>
     <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html" charset=UTF-8>
-    <link href="/webjars/bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/dashboard.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <title>Wine wave | Dashboard</title>
@@ -49,7 +49,7 @@
                             <a class="nav-link" aria-current="page" href="/admin/find-all-vinhos""><span data-feather="home" class="align-text-bottom"></span> Home </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="admin"><span data-feather="file-text" class="align-text-bottom"></span> Novo vinho</a>
+                            <a class="nav-link" href="/admin/index.jsp"><span data-feather="file-text" class="align-text-bottom"></span> Novo vinho</a>
                         </li>
                     </ul>
 
