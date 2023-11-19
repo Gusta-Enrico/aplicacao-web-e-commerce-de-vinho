@@ -17,7 +17,17 @@ public class DeleteVinhoServlet extends HttpServlet {
 
        String idVinho =  req.getParameter("idVinho");
        new VinhoDao().deleteVinhoById(idVinho);
-       resp.sendRedirect("/find-all-vinhos");
+       resp.sendRedirect("/home");
 
+    }
+    @WebServlet("/update-vinho")
+    public class UpdateVinho extends HttpServlet {
+
+        @Override
+        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
+                resp.sendRedirect("admin/index.jsp");
+        }
     }
 }

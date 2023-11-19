@@ -95,8 +95,8 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.2</version>
         <configuration>
-          <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
-          <warSourceDirectory>src/main/webapp</warSourceDirectory>
+          <webXml>src\main\webapp\WEB-INF\web.xml\home.jsp</webXml>
+          <warSourceDirectory>src/main/webapp/WEB-INF/web.xml/home.jsp</warSourceDirectory>
         </configuration>
       </plugin>
     </plugins>

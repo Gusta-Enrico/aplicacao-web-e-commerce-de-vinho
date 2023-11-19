@@ -35,10 +35,10 @@ public class CadastroClienteServlet extends HttpServlet {
 
         if (cadastroSucesso) {
             req.getSession().setAttribute("message", "Cadastro realizado com sucesso!");
-            resp.sendRedirect("/loginCliente");
+            resp.sendRedirect("/loginCliente.jsp");
         } else {
-            req.getSession().setAttribute("message", "Erro no cadastro. Tente novamente.");
-            resp.sendRedirect("/cadastroCliente");
+            req.getSession().setAttribute("message", "Erro no cadastro, Tente novamente.");
+            resp.sendRedirect("/cadastroCliente.jsp");
         }
     }
 }

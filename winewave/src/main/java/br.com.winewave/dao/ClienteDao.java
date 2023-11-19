@@ -29,9 +29,11 @@ public class ClienteDao {
 
 
         } catch (SQLException e) {
+
             System.out.println("fail in database connection");
             System.out.println("Error: " + e.getMessage());
         }
+
         return false;
     }
 
