@@ -14,6 +14,10 @@ public class Cliente {
         this.senha = senha;
     }
 
+    public Cliente(String email, String senha) {
+        //oco
+    }
+
     public String getIdCliente() {
         return idCliente;
     }

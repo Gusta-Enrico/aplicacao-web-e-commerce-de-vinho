@@ -101,7 +101,7 @@
 
         <div class="button-container row">
             <div class="col-md-6">
-                <form action="/login" method="post">
+                <form action="/home.jsp" method="post">
                     <button class="btn btn-primary w-100 py-4" type="submit">Login</button>
                 </form>
             </div>

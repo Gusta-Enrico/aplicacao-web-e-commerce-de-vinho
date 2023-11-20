@@ -26,14 +26,26 @@ public class LoginClienteServlet extends HttpServlet {
         String senha = req.getParameter("senha");
 
         // Verifique as credenciais
-        Cliente cliente = new ClienteDao().buscarClientePorEmail(email);
+        Cliente cliente = new Cliente(email,senha);
+        boolean clienteValido = new ClienteDao().verificarCredenciais(cliente);
 
+        if (clienteValido){
+            req.getSession().setAttribute("loggedCli", cliente);
+            resp.sendRedirect("/home.jsp");
+        }
+        else {
+            req.setAttribute("message", "Invalid credentials!");
+            req.getRequestDispatcher("/cadastroCliente").forward(req, resp);
+        }
+
+
+        /*
         if (cliente != null && cliente.getSenha().equals(senha)) {
             req.getSession().setAttribute("loggedCli", cliente);
             resp.sendRedirect("/home.jsp");
         } else {
             req.setAttribute("message", "Invalid credentials!");
             req.getRequestDispatcher("/cadastroCliente").forward(req, resp);
-        }
+        }*/
     }
 }

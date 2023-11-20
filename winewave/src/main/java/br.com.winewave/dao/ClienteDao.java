@@ -66,4 +66,37 @@ public class ClienteDao {
 
         return null;
     }
+
+    public boolean verificarCredenciais(Cliente cliente) {
+
+        String SQL = "SELECT * FROM CLIENTE WHERE EMAIL = ?";
+
+        try{
+            Connection connection = ConnectionPoolConfig.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1,cliente.getEmail());
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            System.out.println("Sucess in select username");
+
+            while (resultSet.next()){
+                String senha = resultSet.getString("senha");
+
+                if (senha.equals(cliente.getSenha())){
+                    return true;
+                }
+            }
+
+            connection.close();
+            return false;
+
+        }catch (Exception e){
+
+            System.out.println("Error: " + e.getMessage());
+            return false;
+        }
+
+
+    }
 }
