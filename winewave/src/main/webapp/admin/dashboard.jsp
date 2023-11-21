@@ -43,16 +43,12 @@
     <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="logout">Sign out</a>
+            <a class="nav-link px-3" href="/login">Logout</a>
         </div>
     </div>
 </header>
 <div>
     <div class="container-fluid">
-        <c:if test="${sessionScope.loggedUser != null}">
-            <span>${sessionScope.loggedUser}</span>
-            <a href="/logout">Logout</a>
-        </c:if>
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3 sidebar-sticky">
@@ -60,18 +56,13 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#"><span data-feather="user" class="align-text-bottom"></span>
-                                <c:if test="${sessionScope.loggedUser != null}">
                                     <th>Actions</th>
-                                </c:if>
                             </a>
                         </li>
                     </ul>
 
                     <hr>
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/admin/find-all-vinhos""><span data-feather="home" class="align-text-bottom"></span> Home </a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/admin/index.jsp"><span data-feather="file-text" class="align-text-bottom"></span> Novo vinho</a>
                         </li>
@@ -99,7 +90,7 @@
                                 <td>${vinho.preco}</td>
                                 <td>${vinho.descricao}</td>
 
-                                <c:if test="${sessionScope.loggedUser != null}">
+
 
                                     <td>
                                         <form action="/delete-vinho" method="post">
@@ -110,7 +101,6 @@
                                         </form>
                                     </td>
 
-                                </c:if>
 
                             </tr>
                         </c:forEach>
