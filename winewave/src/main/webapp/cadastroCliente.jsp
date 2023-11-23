@@ -83,6 +83,8 @@
                 </div>
                 <button class="btn btn-primary w-100 py-2" type="submit">Cadastrar</button>
             </form>
+            <br>
+            <a href="/loginCliente.jsp" class="btn btn-primary w-100 py-2">Voltar</a>
         </div>
     </div>
 </body>
