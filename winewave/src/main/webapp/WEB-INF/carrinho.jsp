@@ -141,6 +141,15 @@
                                 <small class="text-dark">Valor Item R$499,90</span>
                            </div>
                         </li>
+
+                        <li>
+                            <div>
+                                <h4 class="text-right">
+                                <a href="/index.html" class="btn-outline-success btn-lg">Continuar Comprador</a>
+                                <button class="btn btn-danger btn-lg">Fechar Compra</button>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
             </div>
