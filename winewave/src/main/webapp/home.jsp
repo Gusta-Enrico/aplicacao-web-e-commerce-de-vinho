@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
@@ -115,7 +116,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">
+						<a class="nav-link" href="/carrinho.jsp">
 							Carrinho de compras
 							<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
 								<path d="M15.3801 3.2616C15.1975 2.99155 14.9688 2.77436 14.7104 2.62545C14.452 2.47654 14.1701 2.39957 13.8848 2.4H3.38752L3.36025 2.1192C3.30444 1.53553 3.07677 0.997386 2.72039 0.606782C2.36401 0.216179 1.9037 0.000273435 1.42673 0L1.2826 0C1.1104 0 0.945258 0.0842855 0.823497 0.234315C0.701736 0.384344 0.633331 0.587827 0.633331 0.8C0.633331 1.01217 0.701736 1.21566 0.823497 1.36569C0.945258 1.51571 1.1104 1.6 1.2826 1.6H1.42673C1.58576 1.60003 1.73925 1.67196 1.85809 1.80217C1.97693 1.93238 2.05285 2.1118 2.07145 2.3064L2.96484 11.6664C3.05759 12.6398 3.43717 13.5374 4.03153 14.1888C4.62588 14.8402 5.39365 15.2 6.1891 15.2H12.9694C13.1416 15.2 13.3067 15.1157 13.4285 14.9657C13.5502 14.8157 13.6186 14.6122 13.6186 14.4C13.6186 14.1878 13.5502 13.9843 13.4285 13.8343C13.3067 13.6843 13.1416 13.6 12.9694 13.6H6.1891C5.78724 13.5986 5.39556 13.4441 5.06777 13.1576C4.73998 12.8712 4.49212 12.4668 4.35817 12H12.0974C12.8585 12.0001 13.5955 11.6706 14.1795 11.0691C14.7635 10.4677 15.1574 9.63256 15.2924 8.7096L15.8021 5.2264C15.853 4.88081 15.8416 4.52565 15.7686 4.18611C15.6957 3.84657 15.5631 3.53094 15.3801 3.2616ZM14.5276 4.9424L14.0173 8.4256C13.9362 8.98 13.6995 9.48159 13.3485 9.84256C12.9975 10.2035 12.5546 10.4009 12.0974 10.4H4.1517L3.54074 4H13.8848C13.9802 3.9993 14.0745 4.0245 14.1611 4.0738C14.2477 4.12311 14.3244 4.19532 14.3858 4.28529C14.4471 4.37525 14.4917 4.48078 14.5162 4.59435C14.5407 4.70792 14.5446 4.82676 14.5276 4.9424Z" fill="white"/>
@@ -225,51 +226,48 @@
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
 				<!-- init card-->
-				<c:forEach var="vinho" items="${vinhos}">
-				<div class="col">
-					<div class="card shadow-sm">
-
-						<img src="https://d2r9epyceweg5n.cloudfront.net/stores/002/933/692/products/design-sem-nome-91-03f41c7468f96afd8216923129147368-1024-1024.webp" alt="image de um vinho">
-
-						<div class="card-body">
-							<p class="card-text">Com uma cor rubi intensa e brilhante, Matias Morcos Bonarda seduz com seu aroma complexo e sedutor.</p>
-							<div class="d-flex justify-content-between align-items-center">
-								<div class="btn-group">
-									<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<c:forEach> </c:forEach>
-					<!-- end card-->
+                    <c:forEach var="vinho" items="${vinhos}">
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <img src="${vinho.image}" alt="Imagem de um vinho">
+                                <div class="card-body">
+                                    <p class="card-text">${vinho.nome}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
+				<!-- end card-->
 
 			</div>
 		</div>
 
-<footer class="text-muted py-5">
-	<div class="container">
-		<p class="float-end mb-1">
-			<a href="#">Back to top</a>
-		</p>
-		<p class="mb-1">Create by &copy; Winewave 2023!</p>
-	</div>
-</footer>
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#">Back to top</a>
+            </p>
+            <p class="mb-1">Create by &copy; Winewave 2023!</p>
+        </div>
+    </footer>
 
-<script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-<script>
-	document.addEventListener('DOMContentLoaded', function () {
-		var toggleButton = document.getElementById('toggleSidebar');
-		var sidebar = document.getElementById('sidebar');
+    <script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var toggleButton = document.getElementById('toggleSidebar');
+                var sidebar = document.getElementById('sidebar');
 
-		// Adicione um evento de clique ao botão de alternância
-		toggleButton.addEventListener('click', function () {
-			// Adicione ou remova a classe 'active' do elemento sidebar
-			sidebar.classList.toggle('active');
-		});
-	});
-</script>
+                // Adicione um evento de clique ao botão de alternância
+                toggleButton.addEventListener('click', function () {
+                    // Adicione ou remova a classe 'active' do elemento sidebar
+                    sidebar.classList.toggle('active');
+                });
+            });
+        </script>
 
-				</c:forEach>
-</body>
+    </body>
 </html>

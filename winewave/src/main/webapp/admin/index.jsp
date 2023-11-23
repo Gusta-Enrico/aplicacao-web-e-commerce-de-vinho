@@ -113,8 +113,7 @@
 
                     <div class="mb-3">
                         <label class="form-label">Imagem</label>
-                        <input class="form-control" type="file" name="wine-image" id="wine-image"
-                               value="${vinho.image}">
+                        <input class="form-control" type="file" name="image" id="image" value="${vinho.image}">
                     </div>
 
                     <button type="submit">ENVIAR</button>

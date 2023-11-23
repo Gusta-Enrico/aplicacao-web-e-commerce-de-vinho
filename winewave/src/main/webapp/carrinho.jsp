@@ -145,8 +145,8 @@
                         <li>
                             <div>
                                 <h4 class="text-right">
-                                <a href="/index.html" class="btn-outline-success btn-lg">Continuar Comprador</a>
-                                <button class="btn btn-danger btn-lg">Fechar Compra</button>
+                                <a href="/home.jsp" class="btn-outline-success btn-lg">Continuar Comprador</a>
+                                <button class="btn btn-danger btn-lg">Finalizar Compra</button>
                             </div>
                         </li>
 

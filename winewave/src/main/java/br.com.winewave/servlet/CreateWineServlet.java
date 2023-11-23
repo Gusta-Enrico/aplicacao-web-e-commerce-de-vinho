@@ -33,7 +33,7 @@ public class CreateWineServlet extends HttpServlet {
         String nome = parameters.get("wine-name");
         double preco = Double.parseDouble(parameters.get("wine-preco"));
         String descricao = parameters.get("wine-desc");
-        String image = parameters.get("wine-image");
+        String image = parameters.get("image");
 
 
         Vinho vinho = new Vinho(nome, idVinho, preco, descricao, image);
@@ -55,41 +55,48 @@ public class CreateWineServlet extends HttpServlet {
 
     }
 
-    private Map<String, String> uploadImage(HttpServletRequest httpServletRequest) {
 
-        HashMap<String, String> requestParameters = new HashMap<>();
 
-        if (isMultipartContent(httpServletRequest)) {
-            try {
+private Map<String, String> uploadImage (HttpServletRequest httpServletRequest) {
+        HashMap<String, String> parameters =new HashMap<>();
+
+        if(isMultipartContent(httpServletRequest)) {
+            try{
                 DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
-                List<FileItem> fileItems = new ServletFileUpload(diskFileItemFactory).parseRequest(httpServletRequest);
+               List<FileItem> fileItems = new ServletFileUpload(diskFileItemFactory).parseRequest(httpServletRequest);
 
-                for (FileItem fileItem : fileItems) {
-                    checkFiledType(fileItem, requestParameters);
-                }
-            } catch (Exception ex) {
-                requestParameters.put("image", "img/default-wine.jpg");
+               for(FileItem item: fileItems) {
+                   checkFieldType(item, parameters);
+               }
+            } catch (Exception e) {
+                parameters.put("image", "img/default-vinho.jpeg");
             }
+
+            return  parameters;
+
         }
-        return requestParameters;
-    }
 
+        return parameters;
+}
 
+private void checkFieldType(FileItem fileItem, Map requestParameters) throws Exception {
 
-    private void checkFiledType (FileItem item, Map requestParameters) throws Exception {
-        if (item.isFormField()) {
-            requestParameters.put(item.getFieldName(), item.getString());
+        if (fileItem.isFormField()) {
+            requestParameters.put(fileItem.getFieldName(), fileItem.getString());
         } else {
-            String fileName = processUploadedFile(item);
-            requestParameters.put("image", "img/".concat(fileName));
+            String fileName = processUploadedFile(fileItem);
+            requestParameters.put("image", fileName);
         }
-    }
 
-    private String processUploadedFile(FileItem fileItem) throws Exception {
+}
+
+private String processUploadedFile(FileItem fileItem) throws Exception {
+
         Long currentTime = new Date().getTime();
         String fileName = currentTime.toString().concat("-").concat(fileItem.getName().replace(" ", ""));
         String filePath = this.getServletContext().getRealPath("img").concat(File.separator).concat(fileName);
         fileItem.write(new File(filePath));
+
         return fileName;
     }
 }

@@ -18,7 +18,7 @@ public class VinhoDao {
      * * @param vinho
      */
     public void createVinho(Vinho vinho) {
-        String SQL = "INSERT INTO VINHO  (PRECO_VINHO, NOME_VINHO, DESCRICAO, IMAGE) VALUES (?,?,?,?)";
+        String SQL = "INSERT INTO VINHO  (PRECO_VINHO, NOME_VINHO, DESCRICAO, IMAGE) VALUES (?, ?, ?, ?)";
 
         try {
 
