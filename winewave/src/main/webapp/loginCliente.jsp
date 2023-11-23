@@ -109,6 +109,7 @@
                 <form action="/cadastroCliente" method="get">
                     <button class="btn btn-primary w-100 py-2" type="submit">Cadastro</button>
                 </form>
+
             </div>
         </div>
 </div>

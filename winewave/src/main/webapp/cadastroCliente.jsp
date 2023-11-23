@@ -81,11 +81,13 @@
                     <input type="password" id="senha" name="senha" placeholder="Senha" required>
                     <label for="senha"></label>
                 </div>
-                <button class="btn btn-primary w-100 py-2" type="submit">Cadastrar</button>
             </form>
             <br>
-            <a href="/loginCliente.jsp" class="btn btn-primary w-100 py-2">Voltar</a>
-        </div>
+            <form action="/loginCliente.jsp" method="post">
+                <button class="btn btn-primary w-100 py-2" type="submit">Voltar</button>
+                <button class="btn btn-primary w-100 py-2" type="submit">Cadastrar</button>
+            </form>
+            </div>
     </div>
 </body>
 </html>
